@@ -90,7 +90,7 @@ if (visitorGuessFive === 'n' || visitorGuessFive === 'no') {
 
 alert(`${visitorName}, you have answered ${correctAnswers} correctly.`);
 if (correctAnswers > 3) {
-  alert("You're definitely getting a Christmas card this year!");
+  alert(`You're definitely getting a Christmas card this year!`);
 } else if (correctAnswers === 0) {
   alert('At least you got your name right. :/');
 } else {
@@ -100,11 +100,54 @@ if (correctAnswers > 5) {
   alert(`Are you my clone?!`);
 }
 
-alert(`Ok, let's play a number guessing game. You have 4 guesses.  I'll tell you higher or lower after each incorrect guess.`);
+alert(
+  `Ok, let's play a number guessing game. You have 4 guesses.  I'll tell you higher or lower after each incorrect guess.`
+);
 
-let numbersDifficulty = 0;
-while(numbers numbersDifficulty === 0) {
-  let numbersDifficulty = prompt(`Choose your difficulty: 1-I'm too young to die. 2-Hey, not too rough. 3-Hurt me plenty. 4-Ultra-violence. 5-Nightmare.`)
+let numbersLevelSelect = 0;
+while (numbersLevelSelect < 1 || numbersLevelSelect > 5) {
+  numbersLevelSelect = prompt(
+    `Choose your difficulty: 1-I'm too young to die. 2-Hey, not too rough. 3-Hurt me plenty. 4-Ultra-violence. 5-Nightmare.`
+  );
+}
+let numbersDifficulty = 5 * numbersLevelSelect;
+
+// let numbersActual = Math.random(numbersDifficulty);
+let numbersActual = parseInt(Math.random() * 10 * numbersDifficulty);
+console.log(numbersActual);
+let numbersWin = false;
+
+for (let i = 0; i < 4; i++) {
+  let numbersGuess = prompt(
+    `What is you first guess ${visitorName}? Remember, it's a number between 0 and ${
+      numbersDifficulty * 10
+    }.  Goodluck!`
+  );
+  if (numbersGuess == numbersActual) {
+    numbersWin = true;
+    correctAnswers++;
+    break;
+  } else if (numbersGuess < numbersActual) {
+    alert(`Too low. Guess again.  ${3 - i} guesses left.`);
+    // numbersWin = false;
+  } else if (numbersGuess > numbersActual) {
+    alert(`Too high. Guess again.  ${3 - i} guesses left.`);
+    // numbersWin = false;
+  }
+}
+if (numbersWin === false) {
+  alert(
+    `Nice try.  The correct number was ${numbersActual}. Consider lowering the difficulty next time.`
+  );
 }
 
-alert(`Thanks for playing ${visitorName}!`);
+if (numbersWin === true) {
+  alert(`By gum...You've done it!`);
+}
+
+alert(`One more game...I mean it this time...`);
+
+let favoriteLetters = ['n','i','c','h','o','l','a','s'];
+let favoriteGuess = prompt(`What is one of my favorite letters of the alphabet?`).toLowerCase;
+
+alert(`Thanks for playing ${visitorName}!  Your final score was ${correctAnswers}.  See if you can do better next time!`);
