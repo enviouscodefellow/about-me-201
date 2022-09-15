@@ -88,7 +88,7 @@ if (visitorGuessFive === 'n' || visitorGuessFive === 'no') {
   );
 }
 
-alert(`${visitorName}, you have answered ${correctAnswers} correctly.`);
+alert(`${visitorName}, you have answered ${correctAnswers} correctly so far.`);
 if (correctAnswers > 3) {
   alert(`You're definitely getting a Christmas card this year!`);
 } else if (correctAnswers === 0) {
@@ -121,11 +121,17 @@ for (let i = 0; i < 4; i++) {
   let numbersGuess = prompt(
     `What is you first guess ${visitorName}? Remember, it's a number between 0 and ${
       numbersDifficulty * 10
-    }.  Goodluck!`
+    }. Goodluck!`
   );
-  if (numbersGuess == numbersActual) {
+  if (numbersActual == numbersGuess) {
     numbersWin = true;
     correctAnswers++;
+    
+    // **FIX ME**For some reason the addition is creating a concnated string
+    // correctAnswers = correctAnswers + numbersLevelSelect;
+    // console.log(correctAnswers);
+    // console.log(numbersLevelSelect);
+    
     break;
   } else if (numbersGuess < numbersActual) {
     alert(`Too low. Guess again.  ${3 - i} guesses left.`);
@@ -142,12 +148,53 @@ if (numbersWin === false) {
 }
 
 if (numbersWin === true) {
-  alert(`By gum...You've done it!`);
+  alert(
+    `By gum...You've done it!  Based on your difficulty you got ${numbersLevelSelect} points!`
+  );
 }
+
+alert(`${visitorName}, you have answered ${correctAnswers} correctly so far.`);
 
 alert(`One more game...I mean it this time...`);
 
-let favoriteLetters = ['n','i','c','h','o','l','a','s'];
-let favoriteGuess = prompt(`What is one of my favorite letters of the alphabet?`).toLowerCase;
+let favoriteLetters = ['n', 'i', 'c', 'h', 'o', 'l', 'a', 's'];
+let favoriteGuess = 0;
+let favoriteWin = false;
 
-alert(`Thanks for playing ${visitorName}!  Your final score was ${correctAnswers}.  See if you can do better next time!`);
+console.log(typeof favoriteLetters[0]);
+console.log(typeof favoriteGuess);
+
+for (let i = 0; i < 6; i++) {
+  favoriteGuess = prompt(
+    `What is one of my favorite letters of the alphabet?`
+  ).toLowerCase();
+  while (
+    favoriteGuess.length !== 1 ||
+    typeof favoriteGuess !== typeof favoriteLetters[0]
+  ) {
+    favoriteGuess = prompt(
+      `One letter only please. What is one of my favorite letters of the alphabet?`
+    ).toLowerCase();
+    console.log(typeof favoriteGuess);
+    console.log(typeof favoriteLetters[0]);
+    console.log(favoriteGuess.length);
+  }
+
+  for (let ii = 0; ii < favoriteLetters.length; ii++) {
+    if (favoriteGuess === favoriteLetters[ii]) {
+      favoriteWin = true;
+    }
+  }
+
+  if (favoriteWin === true) {
+    alert(`You guessed one of my 8 favorite letters!  Congratulations!`);
+    correctAnswers++;
+    break;
+  } else {
+    alert(`Nope. Try again. ${5 - i} remaining.`);
+  }
+}
+
+alert(
+  `Thanks for playing ${visitorName}!  Your final score was ${correctAnswers}.  See if you can do better next time! Max score is 9 points.`
+);
