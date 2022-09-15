@@ -3,9 +3,8 @@ body {
   font-family: 'Courier New', Courier, monospace;
 }
 
-article{
+article {
   font-size: 15vw;
-  
 }
 
 h1 {
@@ -13,7 +12,20 @@ h1 {
   color: darkolivegreen;
 }
 
-h2{
+ol {
+  margin-left: 15vw;
+  list-style-type: decimal-leading-zero;
+  /* list-style-position: outside; */
+}
+
+ul {
+  margin-left: 7vw;
+  list-style-type:disc;
+  
+}
+
+li {
   font-size: 5vw;
   color: tan;
+
 }
