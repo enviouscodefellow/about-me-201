@@ -114,7 +114,7 @@ let numbersDifficulty = 5 * numbersLevelSelect;
 
 // let numbersActual = Math.random(numbersDifficulty);
 let numbersActual = parseInt(Math.random() * 10 * numbersDifficulty);
-console.log(numbersActual);
+console.log(`Hint: ${numbersActual}`);
 let numbersWin = false;
 
 for (let i = 0; i < 4; i++) {
