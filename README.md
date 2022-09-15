@@ -9,3 +9,7 @@ Any Links you used as reference
 ### Reflections and Comments
 Consider including the answers to your daily journal and submission questions here
 This is also a good place to reflect on the tools and resources used and learned
+
+Hunter Fehr was the driver 
+Nicholas Seidel was the navigator 
+we worked as a team to do changes
