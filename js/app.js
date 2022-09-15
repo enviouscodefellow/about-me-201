@@ -187,7 +187,7 @@ for (let i = 0; i < 6; i++) {
   }
 
   if (favoriteWin === true) {
-    alert(`You guessed one of my 8 favorite letters!  Congratulations!`);
+    alert(`You guessed one of my 8 favorite letters ${favoriteLetters}!  Congratulations!`);
     correctAnswers++;
     break;
   } else {
