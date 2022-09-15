@@ -88,7 +88,7 @@ if (visitorGuessFive === 'n' || visitorGuessFive === 'no') {
   );
 }
 
-alert(`${visitorName}, you have answered ${correctAnswers} correctly so far.`);
+alert(`${visitorName}, you have gotten ${correctAnswers} points so far.`);
 if (correctAnswers > 3) {
   alert(`You're definitely getting a Christmas card this year!`);
 } else if (correctAnswers === 0) {
@@ -118,19 +118,19 @@ console.log(numbersActual);
 let numbersWin = false;
 
 for (let i = 0; i < 4; i++) {
-  let numbersGuess = prompt(
+  let numbersGuess = +prompt(
     `What is you first guess ${visitorName}? Remember, it's a number between 0 and ${
       numbersDifficulty * 10
     }. Goodluck!`
   );
-  if (numbersActual == numbersGuess) {
+  if (numbersActual === numbersGuess) {
     numbersWin = true;
-    correctAnswers++;
+    // correctAnswers++;
     
     // **FIX ME**For some reason the addition is creating a concnated string
-    // correctAnswers = correctAnswers + numbersLevelSelect;
-    // console.log(correctAnswers);
-    // console.log(numbersLevelSelect);
+    correctAnswers = +correctAnswers + +numbersLevelSelect;
+    console.log(correctAnswers);
+    console.log(numbersLevelSelect);
     
     break;
   } else if (numbersGuess < numbersActual) {
@@ -153,7 +153,7 @@ if (numbersWin === true) {
   );
 }
 
-alert(`${visitorName}, you have answered ${correctAnswers} correctly so far.`);
+alert(`${visitorName}, you have gotten ${correctAnswers} points so far.`);
 
 alert(`One more game...I mean it this time...`);
 
@@ -196,5 +196,5 @@ for (let i = 0; i < 6; i++) {
 }
 
 alert(
-  `Thanks for playing ${visitorName}!  Your final score was ${correctAnswers}.  See if you can do better next time! Max score is 9 points.`
+  `Thanks for playing ${visitorName}!  Your final score was ${correctAnswers}.  See if you can do better next time! Max score is 13 points.  Feelin' lucky?`
 );
