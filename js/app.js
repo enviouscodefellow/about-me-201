@@ -129,8 +129,8 @@ for (let i = 0; i < 4; i++) {
     
     // **FIX ME**For some reason the addition is creating a concnated string
     correctAnswers = +correctAnswers + +numbersLevelSelect;
-    console.log(correctAnswers);
-    console.log(numbersLevelSelect);
+    // console.log(correctAnswers);
+    // console.log(numbersLevelSelect);
     
     break;
   } else if (numbersGuess < numbersActual) {
@@ -161,8 +161,8 @@ let favoriteLetters = ['n', 'i', 'c', 'h', 'o', 'l', 'a', 's'];
 let favoriteGuess = 0;
 let favoriteWin = false;
 
-console.log(typeof favoriteLetters[0]);
-console.log(typeof favoriteGuess);
+// console.log(typeof favoriteLetters[0]);
+// console.log(typeof favoriteGuess);
 
 for (let i = 0; i < 6; i++) {
   favoriteGuess = prompt(
@@ -175,9 +175,9 @@ for (let i = 0; i < 6; i++) {
     favoriteGuess = prompt(
       `One letter only please. What is one of my favorite letters of the alphabet?`
     ).toLowerCase();
-    console.log(typeof favoriteGuess);
-    console.log(typeof favoriteLetters[0]);
-    console.log(favoriteGuess.length);
+    // console.log(typeof favoriteGuess);
+    // console.log(typeof favoriteLetters[0]);
+    // console.log(favoriteGuess.length);
   }
 
   for (let ii = 0; ii < favoriteLetters.length; ii++) {
@@ -198,3 +198,5 @@ for (let i = 0; i < 6; i++) {
 alert(
   `Thanks for playing ${visitorName}!  Your final score was ${correctAnswers}.  See if you can do better next time! Max score is 13 points.  Feelin' lucky?`
 );
+
+console.log(`Created by Nick on 15 Sep 2022`);
